@@ -58,6 +58,7 @@ textarea {
   --black-2d: #fff;
   --gray-light: #f4f4f4;
   --white: #050505;
+  --shadow: 0 5px 30px 0px #ffffff10;
 }
 
 @media (max-width: 576px) {
@@ -295,10 +296,10 @@ body {
 
 .loader {
   position: absolute;
-  top: 55%;
+  top: 59%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 60%;
   display: none;
 }
 
@@ -521,6 +522,9 @@ body {
 @media (max-width: 576px) {
   .container {
     padding-inline: 1.5rem;
+  }
+  .loader {
+    width: 100%;
   }
   .header__wrapper {
     margin: 0;
