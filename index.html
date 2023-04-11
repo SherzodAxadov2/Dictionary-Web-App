@@ -12,7 +12,7 @@
     <title>Dictionary Web App</title>
 </head>
 
-<body>
+<body class="font--sans-serif">
     <header class="header">
         <div class="container">
             <div class="header__wrapper">
@@ -45,7 +45,7 @@
                     <span></span>
                     <div class="header__toggle">
                         <div class="header__toggle__btn" onclick="darkMode()"><span></span></div>
-                        <i class="fa-solid fa-moon"></i>
+                        <i class="fa-solid fa-moon" onclick="darkMode()"></i>
                     </div>
                 </div>
             </div>
@@ -58,11 +58,13 @@
             <button class="form__search">
                 <img src="assets/icons/iconoir_search.png" alt="icon">
             </button>
+            <span class="heading-s text-red">Whoops, can’t be empty…</span>
         </form>
     </div>
+    <img src="assets/images/loading-11.gif" alt="gif" class="loader">
 
     <div class="dictionary">
-        <div class="container">
+        <!-- <div class="container">
             <div class="dictionary__header">
                 <div class="dictionary__word">
                     <h1 class="heading-l text-black-2d">keyboard</h1>
@@ -103,7 +105,8 @@
                 </div>
                 <div class="dictionary__synonym">
                     <p class="heading-s text-gray-bold">Synonyms</p>
-                    <p class="heading-s text-purple bold">electronic keyboard</p>
+                    <p class="heading-s text-purple bold"><a href="https://en.wiktionary.org/wiki/keyboard"
+                            target="_blank">electronic keyboard</a></p>
                 </div>
             </div>
 
@@ -115,9 +118,19 @@
                 <a href="https://en.wiktionary.org/wiki/keyboard" target="_blank"><i
                         class="fa-solid fa-arrow-up-right-from-square"></i></a>
             </div>
-        </div>
+        </div> -->
     </div>
 
+    <div class="no_found container">
+        <img src="assets/icons/sticker.png" alt="smile">
+        <p class="text-black-2d heading-s bold">No Definitions Found</p>
+        <p class="body-m text-gray-bold">Sorry pal, we couldn't find definitions for the word you were looking for. You
+            can try the
+            search
+            again at later time or head to the web instead.</p>
+    </div>
+
+    <script src="js/font.js"></script>
     <script src="js/main.js"></script>
 </body>
 

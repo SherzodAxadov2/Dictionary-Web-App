@@ -1,7 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;600;700;800;900&family=Inter:wght@300;400;600;700;900&family=Lora:wght@400;500;600;700&display=swap");
-// font-family: "Inconsolata", monospace;
-// font-family: "Inter", sans-serif;
-// font-family: "Lora", serif;
 
 :root {
     // Colors
@@ -28,9 +25,6 @@
     --body-s: 14px;
     --body-slh: 17px;
 
-    // Fonts
-    --font-family: "Inter", sans-serif;
-
     // transition
     --transition: all 0.3s ease-in-out;
 
@@ -39,6 +33,14 @@
 
     // shadow
     --shadow: 0 5px 30px 0px #00000010;
+}
+
+[data-theme="dark"] {
+    --black: #fff;
+    --black-1f: #1f1f1f;
+    --black-2d: #fff;
+    --gray-light: #f4f4f4;
+    --white: #050505;
 }
 
 @media (max-width: 576px) {
@@ -52,6 +54,17 @@
         --body-m: 15px;
         --body-mlh: 24px;
     }
+}
+
+// Fonts
+.font--mono {
+    font-family: "Inconsolata", monospace;
+}
+.font--serif {
+    font-family: "Lora", serif;
+}
+.font--sans-serif {
+    font-family: "Inter", sans-serif;
 }
 
 // colors and background

@@ -20,10 +20,17 @@
   --body-mlh: 24px;
   --body-s: 14px;
   --body-slh: 17px;
-  --font-family: "Inter", sans-serif;
   --transition: all 0.3s ease-in-out;
   --radius: 16px;
   --shadow: 0 5px 30px 0px #00000010;
+}
+
+[data-theme=dark] {
+  --black: #fff;
+  --black-1f: #1f1f1f;
+  --black-2d: #fff;
+  --gray-light: #f4f4f4;
+  --white: #050505;
 }
 
 @media (max-width: 576px) {
@@ -38,6 +45,18 @@
     --body-mlh: 24px;
   }
 }
+.font--mono {
+  font-family: "Inconsolata", monospace;
+}
+
+.font--serif {
+  font-family: "Lora", serif;
+}
+
+.font--sans-serif {
+  font-family: "Inter", sans-serif;
+}
+
 .text-black {
   color: var(--black);
 }

@@ -20,6 +20,7 @@
         width: 100%;
         color: #2d2d2d25;
         font-weight: bold;
+        font-family: inherit;
         font-size: 20px;
         line-height: 24px;
         background: var(--gray-light);
@@ -41,6 +42,14 @@
         transition: var(--transition);
         &:hover {
             transform: scale(1.04) translateY(-1px);
+        }
+    }
+}
+body[data-theme="dark"] {
+    .form {
+        &__input {
+            border: 1px solid var(--black-1f);
+            background: var(--black-1f);
         }
     }
 }

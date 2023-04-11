@@ -19,6 +19,7 @@
   width: 100%;
   color: rgba(45, 45, 45, 0.1450980392);
   font-weight: bold;
+  font-family: inherit;
   font-size: 20px;
   line-height: 24px;
   background: var(--gray-light);
@@ -41,6 +42,11 @@
 }
 .form__search:hover {
   transform: scale(1.04) translateY(-1px);
+}
+
+body[data-theme=dark] .form__input {
+  border: 1px solid var(--black-1f);
+  background: var(--black-1f);
 }
 
 .dictionary__audio {
