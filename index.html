@@ -5,14 +5,120 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/styles/main.css">
     <title>Dictionary Web App</title>
 </head>
 
 <body>
-    <div class="container">
+    <header class="header">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="header__logo">
+                    <a href="/">
+                        <img src="assets/images/logo.png" alt="logo">
+                    </a>
+                </div>
 
+                <div class="header__widgets">
+                    <div class="header__select" onclick="showSelect()">
+                        <p class="header__select--selected body-m text-black-2d">
+                            Sans Serif
+                        </p>
+                        <img src="assets/icons/select-icon.png" alt="icon">
+                        <div class="header__selectors">
+                            <ul>
+                                <li>
+                                    <p class="body-m text-black-2d" onclick="setSelectorValue(event)">Sans Serif</p>
+                                </li>
+                                <li>
+                                    <p class="body-m text-black-2d" onclick="setSelectorValue(event)">Serif</p>
+                                </li>
+                                <li>
+                                    <p class="body-m text-black-2d" onclick="setSelectorValue(event)">Mono</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span></span>
+                    <div class="header__toggle">
+                        <div class="header__toggle__btn" onclick="darkMode()"><span></span></div>
+                        <i class="fa-solid fa-moon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <form class="form">
+            <input type="text" class="form__input" placeholder="Search for any word…">
+            <button class="form__search">
+                <img src="assets/icons/iconoir_search.png" alt="icon">
+            </button>
+        </form>
     </div>
+
+    <div class="dictionary">
+        <div class="container">
+            <div class="dictionary__header">
+                <div class="dictionary__word">
+                    <h1 class="heading-l text-black-2d">keyboard</h1>
+                    <p class="dictionary__spelling heading-m text-purple">/ˈkiːbɔːd/</p>
+                </div>
+                <button class="dictionary__audio">
+                    <i class="fa-sharp fa-solid fa-play"></i>
+                </button>
+            </div>
+
+            <div class="dictionary__meanings">
+                <div class="dictionary__part_of_speech">
+                    <p class="heading-m text-black-2d">noun</p>
+                    <span></span>
+                </div>
+                <div class="dictionary__meaning">
+                    <p class="heading-s text-gray-bold">Meaning</p>
+                    <ul>
+                        <li>
+                            <span></span>
+                            <div>
+                                <p class="body-m text-black-2d">(etc.) A set of keys used to operate a typewriter,
+                                    computer etc.</p>
+                                <p class="body-m text-gray-bold">“Keyboarding is the part of this job I hate the most.”
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <span></span>
+                            <div>
+                                <p class="body-m text-black-2d">(etc.) A set of keys used to operate a typewriter,
+                                    computer etc.</p>
+                                <p class="body-m text-gray-bold">“Keyboarding is the part of this job I hate the most.”
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dictionary__synonym">
+                    <p class="heading-s text-gray-bold">Synonyms</p>
+                    <p class="heading-s text-purple bold">electronic keyboard</p>
+                </div>
+            </div>
+
+            <div class="dictionary__source">
+                <a href="https://en.wiktionary.org/wiki/keyboard" target="_blank"
+                    class="body-s text-gray-bold">Source</a>
+                <a href="https://en.wiktionary.org/wiki/keyboard" target="_blank"
+                    class="body-s text-black-2d">https://en.wiktionary.org/wiki/keyboard</a>
+                <a href="https://en.wiktionary.org/wiki/keyboard" target="_blank"><i
+                        class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>

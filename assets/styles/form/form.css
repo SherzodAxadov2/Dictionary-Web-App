@@ -23,7 +23,7 @@
   line-height: 24px;
   background: var(--gray-light);
   border: 1px solid var(--gray-light);
-  border-radius: 16px;
+  border-radius: var(--radius);
   transition: var(--transition);
 }
 .form__input[placeholder] {
@@ -41,4 +41,47 @@
 }
 .form__search:hover {
   transform: scale(1.04) translateY(-1px);
+}
+
+.dictionary__audio {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  background: rgba(164, 69, 237, 0.1450980392);
+  transition: var(--transition);
+  cursor: pointer;
+}
+.dictionary__audio:hover {
+  background: var(--purple);
+}
+.dictionary__audio:hover i {
+  color: var(--white);
+}
+.dictionary__audio i {
+  font-size: 21px;
+  color: var(--purple);
+  transition: var(--transition);
+  margin-left: 4px;
+}
+
+@media (max-width: 576px) {
+  .form__input {
+    padding: 14px 24px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+  .form__search {
+    top: 16px;
+  }
+  .dictionary__audio {
+    width: 48px;
+    height: 48px;
+  }
+  .dictionary__audio i {
+    font-size: 13px;
+    margin-left: 2px;
+  }
 }/*# sourceMappingURL=form.css.map */

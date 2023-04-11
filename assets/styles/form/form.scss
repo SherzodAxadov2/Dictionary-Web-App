@@ -24,7 +24,7 @@
         line-height: 24px;
         background: var(--gray-light);
         border: 1px solid var(--gray-light);
-        border-radius: 16px;
+        border-radius: var(--radius);
         transition: var(--transition);
         &[placeholder] {
             color: var(--black-2d);
@@ -41,6 +41,54 @@
         transition: var(--transition);
         &:hover {
             transform: scale(1.04) translateY(-1px);
+        }
+    }
+}
+.dictionary {
+    &__audio {
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        display: block;
+        align-items: center;
+        justify-content: center;
+        background: #a445ed25;
+        transition: var(--transition);
+        cursor: pointer;
+        &:hover {
+            background: var(--purple);
+            i {
+                color: var(--white);
+            }
+        }
+        i {
+            font-size: 21px;
+            color: var(--purple);
+            transition: var(--transition);
+            margin-left: 4px;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .form {
+        &__input {
+            padding: 14px 24px;
+            font-size: 16px;
+            line-height: 19px;
+        }
+        &__search {
+            top: 16px;
+        }
+    }
+    .dictionary {
+        &__audio {
+            width: 48px;
+            height: 48px;
+            i {
+                font-size: 13px;
+                margin-left: 2px;
+            }
         }
     }
 }

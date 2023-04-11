@@ -22,8 +22,22 @@
   --body-slh: 17px;
   --font-family: "Inter", sans-serif;
   --transition: all 0.3s ease-in-out;
+  --radius: 16px;
+  --shadow: 0 5px 30px 0px #00000010;
 }
 
+@media (max-width: 576px) {
+  :root {
+    --heading-l: 32px;
+    --heading-llh: 38px;
+    --heading-m: 18px;
+    --heading-mlh: 21px;
+    --heading-s: 16px;
+    --heading-slh: 19px;
+    --body-m: 15px;
+    --body-mlh: 24px;
+  }
+}
 .text-black {
   color: var(--black);
 }

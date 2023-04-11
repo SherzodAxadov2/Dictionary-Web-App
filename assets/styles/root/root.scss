@@ -33,6 +33,25 @@
 
     // transition
     --transition: all 0.3s ease-in-out;
+
+    // b-radius
+    --radius: 16px;
+
+    // shadow
+    --shadow: 0 5px 30px 0px #00000010;
+}
+
+@media (max-width: 576px) {
+    :root {
+        --heading-l: 32px;
+        --heading-llh: 38px;
+        --heading-m: 18px;
+        --heading-mlh: 21px;
+        --heading-s: 16px;
+        --heading-slh: 19px;
+        --body-m: 15px;
+        --body-mlh: 24px;
+    }
 }
 
 // colors and background
