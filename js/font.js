@@ -20,8 +20,6 @@ document.addEventListener("click", function handleClickOutsideBox(event) {
   }
 });
 
-console.log(localStorage.getItem("font-family"));
-
 const setSelectorValue = (e) => {
   const getSelectvalue = e.target.textContent.trim();
   setFontFamily(getSelectvalue);
@@ -83,4 +81,3 @@ if (localStorage.getItem("font-family")) {
   setFontFamily(localStorage.getItem("font-family"));
   selected.value = localStorage.getItem("font-family");
 }
-// console.log(select.textContent);

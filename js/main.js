@@ -50,7 +50,6 @@ const getData = async (word) => {
     noFound.classList.add("nodata");
   } else {
     noFound.classList.remove("nodata");
-    console.log(data[0]);
     loader.style.display = "none";
     setDictionary(data[0]);
     search(data[0]);
@@ -75,7 +74,6 @@ form.addEventListener("submit", (e) => {
   if (input.value.trim()) {
     getData(input.value);
     loader.style.display = "block";
-    // initiateSearch();
   }
 
   form.reset();
@@ -122,7 +120,6 @@ const setDictionary = (word) => {
                               </div>
                           </li>
                       `);
-                    // console.log(defs.join(""));
                   });
                   meanings.push(`
                   <div class="dictionary__part_of_speech">
@@ -173,5 +170,3 @@ const volume = () => {
 if (JSON.parse(localStorage.getItem("word"))) {
   setDictionary(JSON.parse(localStorage.getItem("word")));
 }
-
-console.log(window.location);
