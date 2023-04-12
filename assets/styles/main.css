@@ -451,11 +451,15 @@ body {
 }
 .dictionary__meaning ul li span {
   display: block;
+  white-space: nowrap;
   width: 5px;
   height: 5px;
-  margin-top: 10px;
+  transform: translateY(10px);
   border-radius: 50%;
   background: var(--purple);
+}
+.dictionary__meaning ul li p {
+  white-space: wrap;
 }
 .dictionary__meaning ul li p:last-child {
   margin-top: 10px;

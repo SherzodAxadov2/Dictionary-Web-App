@@ -58,7 +58,6 @@ const setDictionary = (word) => {
       audio.setAttribute("src", `${phonetic.audio}`);
     }
   });
-  console.log(word.meanings);
   dictionary.innerHTML = ``;
   dictionary.innerHTML += `
          <div class="container">
@@ -76,47 +75,53 @@ const setDictionary = (word) => {
 
             <div class="dictionary__meanings">
                 ${word.meanings.map((meaning) => {
-                  return `
-                        <div class="dictionary__part_of_speech">
-                            <p class="heading-m text-black-2d">${
-                              meaning.partOfSpeech
-                            }</p>
-                            <span></span>
-                        </div>
-                        <div class="dictionary__meaning">
-                            <p class="heading-s text-gray-bold">Meaning</p>
-                            <ul>
-                                ${meaning.definitions.map((def) => {
-                                  return `
-                                        <li>
-                                            <span></span>
-                                            <div>
-                                                <p class="body-m text-black-2d">${
-                                                  def.definition
-                                                }</p>
-                                                <p class="body-m text-gray-bold">${
-                                                  def.example ? def.example : ""
-                                                }</p>
-                                            </div>
-                                        </li>
-                                    `;
-                                })}
-                            </ul>
-                        </div>
-                        <div class="dictionary__synonym">
-                            <p class="heading-s text-gray-bold">Synonyms</p>
-                            <p class="heading-s text-purple bold"><a href="${
-                              meaning.synonyms[0]
-                                ? `https://en.wiktionary.org/wiki/${meaning.synonyms[0]}`
-                                : "https://en.wiktionary.org/wiki/Wiktionary:Main_Page"
-                            }"
-                                    target="_blank">${
-                                      meaning.synonyms[0]
-                                        ? meaning.synonyms[0]
-                                        : "not found"
-                                    }</a></p>
-                        </div>
-                    `;
+                  let defs = [];
+                  let meanings = [];
+                  meaning.definitions.map((def) => {
+                    defs.push(`
+                          <li>
+                              <span></span>
+                              <div>
+                                  <p class="body-m text-black-2d">${
+                                    def.definition
+                                  }</p>
+                                  <p class="body-m text-gray-bold">${
+                                    def.example ? def.example : ""
+                                  }</p>
+                              </div>
+                          </li>
+                      `);
+                    // console.log(defs.join(""));
+                  });
+                  meanings.push(`
+                  <div class="dictionary__part_of_speech">
+                      <p class="heading-m text-black-2d">${
+                        meaning.partOfSpeech
+                      }</p>
+                      <span></span>
+                  </div>
+                  <div class="dictionary__meaning">
+                      <p class="heading-s text-gray-bold">Meaning</p>
+                      <ul>
+                          ${defs.join("")}
+                      </ul>
+                  </div>
+                  <div class="dictionary__synonym">
+                      <p class="heading-s text-gray-bold">Synonyms</p>
+                      <p class="heading-s text-purple bold"><a href="${
+                        meaning.synonyms[0]
+                          ? `https://en.wiktionary.org/wiki/${meaning.synonyms[0]}`
+                          : "https://en.wiktionary.org/wiki/Wiktionary:Main_Page"
+                      }"
+                              target="_blank">${
+                                meaning.synonyms[0]
+                                  ? meaning.synonyms[0]
+                                  : "not found"
+                              }</a></p>
+                  </div>
+              `);
+                  console.log(meanings.join("\n"));
+                  return meanings.join("\n");
                 })}
             </div>
 
