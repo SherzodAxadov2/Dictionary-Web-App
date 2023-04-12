@@ -4,6 +4,8 @@ const input = document.querySelector("input");
 const noFound = document.querySelector(".no_found");
 const dictionary = document.querySelector(".dictionary");
 const loader = document.querySelector(".loader");
+const body = document.body;
+
 let audio;
 
 const darkMode = () => {
@@ -11,6 +13,26 @@ const darkMode = () => {
   document.body.getAttribute("data-theme")
     ? document.body.removeAttribute("data-theme")
     : document.body.setAttribute("data-theme", "dark");
+  saveThemeStorage();
+};
+
+if (localStorage.getItem("theme")) {
+  body.setAttribute("data-theme", localStorage.getItem("theme"));
+  toggleBtn.classList.add("dark");
+} else {
+  toggleBtn.classList.remove("dark");
+}
+
+const saveThemeStorage = () => {
+  if (body.getAttribute("data-theme")) {
+    localStorage.setItem("theme", body.getAttribute("data-theme"));
+  } else {
+    localStorage.removeItem("theme");
+  }
+};
+
+const saveLocalStorage = (word) => {
+  localStorage.setItem("word", JSON.stringify(word));
 };
 
 const getData = async (word) => {
@@ -31,7 +53,12 @@ const getData = async (word) => {
     console.log(data[0]);
     loader.style.display = "none";
     setDictionary(data[0]);
+    search(data[0]);
   }
+};
+
+const search = (word) => {
+  window.location.search = `word=${word.word}`;
 };
 
 form.addEventListener("submit", (e) => {
@@ -46,12 +73,14 @@ form.addEventListener("submit", (e) => {
   if (input.value) {
     getData(input.value);
     loader.style.display = "block";
+    // initiateSearch();
   }
 
   form.reset();
 });
 
 const setDictionary = (word) => {
+  saveLocalStorage(word);
   word.phonetics.map((phonetic) => {
     if (phonetic.audio) {
       audio = new Audio();
@@ -120,8 +149,7 @@ const setDictionary = (word) => {
                               }</a></p>
                   </div>
               `);
-                  console.log(meanings.join("\n"));
-                  return meanings.join("\n");
+                  return meanings.join("");
                 })}
             </div>
 
@@ -139,3 +167,9 @@ const setDictionary = (word) => {
 const volume = () => {
   audio.play();
 };
+
+if (JSON.parse(localStorage.getItem("word"))) {
+  setDictionary(JSON.parse(localStorage.getItem("word")));
+}
+
+console.log(window.location);

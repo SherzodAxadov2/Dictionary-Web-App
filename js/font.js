@@ -2,9 +2,25 @@ const select = document.querySelector(".header__select");
 const selected = document.querySelector(".header__select--selected");
 const selectors = select.querySelectorAll(".header__selectors ul li");
 
+const saveFontToStorage = (font) => {
+  localStorage.setItem("font-family", font);
+};
+
+localStorage.getItem("font-family")
+  ? (selected.textContent = localStorage.getItem("font-family"))
+  : (selected.textContent = "Sans Serif");
+
 const showSelect = () => {
   select.classList.toggle("open");
 };
+
+document.addEventListener("click", function handleClickOutsideBox(event) {
+  if (!select.contains(event.target)) {
+    select.classList.remove("open");
+  }
+});
+
+console.log(localStorage.getItem("font-family"));
 
 const setSelectorValue = (e) => {
   const getSelectvalue = e.target.textContent.trim();
@@ -29,6 +45,7 @@ const setSelectorValue = (e) => {
               </ul>
           </div>
     `;
+  saveFontToStorage(getSelectvalue);
 };
 
 const setFontFamily = (font) => {
@@ -61,3 +78,9 @@ const setFontFamily = (font) => {
       break;
   }
 };
+
+if (localStorage.getItem("font-family")) {
+  setFontFamily(localStorage.getItem("font-family"));
+  selected.value = localStorage.getItem("font-family");
+}
+// console.log(select.textContent);
