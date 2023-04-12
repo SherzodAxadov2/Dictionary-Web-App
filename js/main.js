@@ -66,11 +66,13 @@ form.addEventListener("submit", (e) => {
   form.classList.remove("error");
   dictionary.innerHTML = ``;
 
-  if (!input.value) {
+  if (!input.value.trim()) {
     form.classList.add("error");
+    noFound.classList.remove("nodata");
+    loader.style.display = "none";
   }
 
-  if (input.value) {
+  if (input.value.trim()) {
     getData(input.value);
     loader.style.display = "block";
     // initiateSearch();
